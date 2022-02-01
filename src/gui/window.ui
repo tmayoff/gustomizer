@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <object class="GtkApplicationWindow" id="win">
+    <property name="title">Grub Customizer</property>
+    <property name="default-width">900</property>
+    <property name="default-height">600</property>
+    <child/>
+  </object>
+</interface>

@@ -1,10 +1,18 @@
 #include <gtk/gtk.h>
 
+#include <gui-resources.h>
+
+#include <string>
+
 static void app_activate(GApplication *app, gpointer *) {
   GtkWidget *win;
-  win = gtk_application_window_new(GTK_APPLICATION(app));
-  gtk_window_set_title(GTK_WINDOW(win), "Gustomizer");
-  gtk_window_set_default_size(GTK_WINDOW(win), 1600, 900);
+  GtkBuilder *build;
+
+  build =
+      gtk_builder_new_from_resource("/com/tylermayoff/gustomizer/window.ui");
+  win = GTK_WIDGET(gtk_builder_get_object(build, "win"));
+  gtk_window_set_application(GTK_WINDOW(win), GTK_APPLICATION(app));
+
   gtk_widget_show(win);
 }
 
